@@ -64,6 +64,9 @@ public class User implements Serializable {
     @JoinColumn(name = "Role", referencedColumnName = "RoleID")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Role role;
+    @Basic(optional = true)
+    @Column(name = "ResetPasswordUUID")
+    private String UUID;
 
     public User() {
     }
@@ -80,7 +83,16 @@ public class User implements Serializable {
         this.firstname = firstname;
         this.lastname = lastname;
     }
-
+    public String getUUID()
+    {
+        return UUID;
+    }
+    
+    public void setUUID(String newUUID)
+    {
+        UUID = newUUID;
+    }
+    
     public String getUsername() {
         return username;
     }

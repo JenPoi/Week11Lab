@@ -10,6 +10,7 @@ import dataaccess.UserDB;
 import domainmodel.*;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -20,7 +21,11 @@ import javax.naming.NamingException;
  * @author awarsyle
  */
 public class AccountService {
-    
+    public void resetPassword(String email, String path, String url)
+    {
+        String uuid = UUID.randomUUID().toString();
+        
+    }
     public User checkLogin(String username, String password, String path) {
         User user;
         
